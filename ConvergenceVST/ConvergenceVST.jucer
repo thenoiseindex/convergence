@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="r21hXL" name="ConvergenceVST" projectType="audioplug" version="1.0.0"
+              bundleIdentifier="com.thenoiseindex.ConvergenceVST" buildVST="1"
+              buildAU="0" pluginName="ConvergenceVST" pluginDesc="ConvergenceVST"
+              pluginManufacturer="yourcompany" pluginManufacturerCode="Manu"
+              pluginCode="Plug" pluginChannelConfigs="{1, 1}" pluginIsSynth="1"
+              pluginWantsMidiIn="0" pluginProducesMidiOut="0" pluginSilenceInIsSilenceOut="0"
+              pluginEditorRequiresKeys="0" pluginAUExportPrefix="ConvergenceVSTAU"
+              pluginRTASCategory="" aaxIdentifier="com.yourcompany.ConvergenceVST"
+              pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="3.1.0"
+              companyName="The Noise Index">
+  <MAINGROUP id="oIGxTd" name="ConvergenceVST">
+    <GROUP id="{276BD5A2-847E-15B3-13DB-E101DC580D7F}" name="Source">
+      <FILE id="NAwmKD" name="Tweet.h" compile="0" resource="0" file="Source/Tweet.h"/>
+      <FILE id="hxQqur" name="TwitterHandler.cpp" compile="1" resource="0"
+            file="Source/TwitterHandler.cpp"/>
+      <FILE id="OOLq1O" name="TwitterHandler.h" compile="0" resource="0"
+            file="Source/TwitterHandler.h"/>
+      <FILE id="RlLEuk" name="TTS.cpp" compile="1" resource="0" file="Source/TTS.cpp"/>
+      <FILE id="dzymrP" name="TTS.h" compile="0" resource="0" file="Source/TTS.h"/>
+      <FILE id="Yx2FuR" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="xdlWju" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="WnYa7l" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="IhHIZk" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+    <GROUP id="{254A2DF4-534D-ADAC-0210-1434CBA01B51}" name="libraries">
+      <FILE id="mVCU06" name="flite_voice_list.c" compile="1" resource="0"
+            file="Source/flite_voice_list.c"/>
+      <GROUP id="{31F876EE-F8B1-2161-343D-F124596B05CE}" name="flite-1">
+        <GROUP id="{95073D1D-1696-41E0-6F08-C8EE1756BA33}" name="include">
+          <FILE id="xzef3C" name="cst_alloc.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_alloc.h"/>
+          <FILE id="HvmTsb" name="cst_audio.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_audio.h"/>
+          <FILE id="T8Dckr" name="cst_cart.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_cart.h"/>
+          <FILE id="wkgbnz" name="cst_cg.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_cg.h"/>
+          <FILE id="mn8p6f" name="cst_diphone.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_diphone.h"/>
+          <FILE id="ZEHmrG" name="cst_endian.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_endian.h"/>
+          <FILE id="H8y2K7" name="cst_error.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_error.h"/>
+          <FILE id="ctV6gX" name="cst_features.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_features.h"/>
+          <FILE id="yvYrMJ" name="cst_ffeatures.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_ffeatures.h"/>
+          <FILE id="XBhtTZ" name="cst_file.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_file.h"/>
+          <FILE id="DuNF23" name="cst_hrg.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_hrg.h"/>
+          <FILE id="caRFe6" name="cst_item.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_item.h"/>
+          <FILE id="Gr612X" name="cst_lexicon.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_lexicon.h"/>
+          <FILE id="lhLjCI" name="cst_lts.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_lts.h"/>
+          <FILE id="byxCvk" name="cst_math.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_math.h"/>
+          <FILE id="EmjLyj" name="cst_mlpg.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_mlpg.h"/>
+          <FILE id="rjGYg6" name="cst_mlsa.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_mlsa.h"/>
+          <FILE id="gG79Fw" name="cst_phoneset.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_phoneset.h"/>
+          <FILE id="zwbmKq" name="cst_regex.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_regex.h"/>
+          <FILE id="beSKLU" name="cst_regex_defs.h" compile="0" resource="0"
+                file="Source/flite-1.4-iphone/include/cst_regex_defs.h"/>
+          <FILE id="DNUs2S" name="cst_relation.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_relation.h"/>
+          <FILE id="HAAzfG" name="cst_sigpr.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_sigpr.h"/>
+          <FILE id="lwIZ17" name="cst_string.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_string.h"/>
+          <FILE id="aMgYXD" name="cst_sts.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_sts.h"/>
+          <FILE id="Is8Ax9" name="cst_synth.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_synth.h"/>
+          <FILE id="oJadqp" name="cst_tokenstream.h" compile="0" resource="0"
+                file="Source/flite-1.4-iphone/include/cst_tokenstream.h"/>
+          <FILE id="O5nN3z" name="cst_track.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_track.h"/>
+          <FILE id="eGgf2b" name="cst_units.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_units.h"/>
+          <FILE id="U9vjUf" name="cst_utt_utils.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_utt_utils.h"/>
+          <FILE id="JrMECO" name="cst_utterance.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_utterance.h"/>
+          <FILE id="sNFhT9" name="cst_val.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_val.h"/>
+          <FILE id="LsINTq" name="cst_val_const.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_val_const.h"/>
+          <FILE id="Dt375P" name="cst_val_defs.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_val_defs.h"/>
+          <FILE id="ZOwEAu" name="cst_vc.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_vc.h"/>
+          <FILE id="sQNhcB" name="cst_viterbi.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_viterbi.h"/>
+          <FILE id="V8tEhp" name="cst_voice.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_voice.h"/>
+          <FILE id="DXuiN4" name="cst_wave.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/cst_wave.h"/>
+          <FILE id="YQG9iC" name="flite.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/flite.h"/>
+          <FILE id="JFZIn2" name="native_audio.h" compile="0" resource="0" file="Source/flite-1.4-iphone/include/native_audio.h"/>
+        </GROUP>
+        <GROUP id="{B0A17007-E382-A675-26A8-7F1D7968975A}" name="src">
+          <FILE id="MLG3kq" name="au_none.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/au_none.c"/>
+          <FILE id="ZVFrRh" name="au_streaming.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/au_streaming.c"/>
+          <FILE id="mHUkOI" name="audio.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/audio.c"/>
+          <FILE id="ZhgqmT" name="cst_alloc.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_alloc.c"/>
+          <FILE id="sikfoM" name="cst_cart.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_cart.c"/>
+          <FILE id="p36nYC" name="cst_cg.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_cg.c"/>
+          <FILE id="fwuayS" name="cst_diphone.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_diphone.c"/>
+          <FILE id="dEcVJK" name="cst_endian.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_endian.c"/>
+          <FILE id="hF6cmM" name="cst_error.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_error.c"/>
+          <FILE id="iCXv3d" name="cst_features.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_features.c"/>
+          <FILE id="GojQC3" name="cst_ffeature.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_ffeature.c"/>
+          <FILE id="Sw9aBl" name="cst_ffeatures.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_ffeatures.c"/>
+          <FILE id="VUzNWl" name="cst_file_stdio.c" compile="1" resource="0"
+                file="Source/flite-1.4-iphone/src/cst_file_stdio.c"/>
+          <FILE id="wsSwXm" name="cst_item.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_item.c"/>
+          <FILE id="t5yHT5" name="cst_lexicon.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_lexicon.c"/>
+          <FILE id="Ui8BQh" name="cst_lpcres.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_lpcres.c"/>
+          <FILE id="QpZcNa" name="cst_lts.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_lts.c"/>
+          <FILE id="NeWADy" name="cst_mlpg.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_mlpg.c"/>
+          <FILE id="OWPZ1G" name="cst_mlsa.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_mlsa.c"/>
+          <FILE id="YF3aJ5" name="cst_phoneset.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_phoneset.c"/>
+          <FILE id="v6Oo0j" name="cst_regex.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_regex.c"/>
+          <FILE id="p6AqEb" name="cst_relation.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_relation.c"/>
+          <FILE id="rUh9h5" name="cst_sigpr.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_sigpr.c"/>
+          <FILE id="TBwPYk" name="cst_string.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_string.c"/>
+          <FILE id="xEJyWZ" name="cst_sts.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_sts.c"/>
+          <FILE id="n0w3Yl" name="cst_synth.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_synth.c"/>
+          <FILE id="xm1jJc" name="cst_tokenstream.c" compile="1" resource="0"
+                file="Source/flite-1.4-iphone/src/cst_tokenstream.c"/>
+          <FILE id="aRY81D" name="cst_track.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_track.c"/>
+          <FILE id="fsoDje" name="cst_units.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_units.c"/>
+          <FILE id="WZJOnC" name="cst_utt_utils.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_utt_utils.c"/>
+          <FILE id="EoTCXk" name="cst_utterance.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_utterance.c"/>
+          <FILE id="ZRiIG8" name="cst_val.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_val.c"/>
+          <FILE id="TIYed2" name="cst_val_const.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_val_const.c"/>
+          <FILE id="C0QNpm" name="cst_val_user.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_val_user.c"/>
+          <FILE id="cbuT0G" name="cst_vc.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_vc.c"/>
+          <FILE id="zTfmRS" name="cst_voice.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_voice.c"/>
+          <FILE id="J4fFcx" name="cst_wave.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_wave.c"/>
+          <FILE id="Rglip9" name="cst_wave_io.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/cst_wave_io.c"/>
+          <FILE id="UtG2Kh" name="cst_wave_utils.c" compile="1" resource="0"
+                file="Source/flite-1.4-iphone/src/cst_wave_utils.c"/>
+          <FILE id="NtgXtP" name="flite.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/flite.c"/>
+          <FILE id="Fx6M51" name="rateconv.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/rateconv.c"/>
+          <FILE id="rLvbkx" name="regexp.c" compile="1" resource="0" file="Source/flite-1.4-iphone/src/regexp.c"/>
+        </GROUP>
+        <GROUP id="{18C42E3F-29BF-7539-6604-7AB8DC8F0868}" name="voices">
+          <GROUP id="{D53ABEFA-38B2-A757-1E7E-2DD4C94EC44D}" name="cmu_us_awb">
+            <FILE id="g9LyTc" name="cmu_us_awb.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_awb/cmu_us_awb.c"/>
+            <FILE id="JDDvq1" name="cmu_us_awb_cg.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_awb/cmu_us_awb_cg.c"/>
+            <FILE id="h6Ocym" name="cmu_us_awb_cg_durmodel.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_awb/cmu_us_awb_cg_durmodel.c"/>
+            <FILE id="JH25fF" name="cmu_us_awb_cg_durmodel.h" compile="0" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_awb/cmu_us_awb_cg_durmodel.h"/>
+            <FILE id="sGCJcw" name="cmu_us_awb_cg_f0_trees.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_awb/cmu_us_awb_cg_f0_trees.c"/>
+            <FILE id="CP2e7O" name="cmu_us_awb_cg_f0_trees.h" compile="0" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_awb/cmu_us_awb_cg_f0_trees.h"/>
+            <FILE id="mRZ4nJ" name="cmu_us_awb_cg_phonestate.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_awb/cmu_us_awb_cg_phonestate.c"/>
+            <FILE id="rhjgX9" name="cmu_us_awb_cg_single_mcep_trees.c" compile="1"
+                  resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_awb/cmu_us_awb_cg_single_mcep_trees.c"/>
+            <FILE id="Zg9kCp" name="cmu_us_awb_cg_single_mcep_trees.h" compile="0"
+                  resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_awb/cmu_us_awb_cg_single_mcep_trees.h"/>
+            <FILE id="aAbgBU" name="cmu_us_awb_cg_single_params.c" compile="1"
+                  resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_awb/cmu_us_awb_cg_single_params.c"/>
+            <FILE id="YvpzyF" name="voxdefs.h" compile="0" resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_awb/voxdefs.h"/>
+          </GROUP>
+          <GROUP id="{5D83F773-D08A-61E9-D87B-EE5CDC5A689C}" name="cmu_us_kal">
+            <FILE id="fGpV4k" name="cmu_us_kal.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_kal/cmu_us_kal.c"/>
+            <FILE id="SY3BF5" name="cmu_us_kal_diphone.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_kal/cmu_us_kal_diphone.c"/>
+            <FILE id="RbiE9I" name="cmu_us_kal_lpc.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_kal/cmu_us_kal_lpc.c"/>
+            <FILE id="tb8g2V" name="cmu_us_kal_res.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_kal/cmu_us_kal_res.c"/>
+            <FILE id="bZ3rKY" name="cmu_us_kal_residx.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_kal/cmu_us_kal_residx.c"/>
+            <FILE id="b6RDTu" name="voxdefs.h" compile="0" resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_kal/voxdefs.h"/>
+          </GROUP>
+          <GROUP id="{3057C723-7EC4-A953-FB5A-B1A9A52296BC}" name="cmu_us_kal16">
+            <FILE id="mneW1g" name="cmu_us_kal16.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_kal16/cmu_us_kal16.c"/>
+            <FILE id="xjJgoH" name="cmu_us_kal16_diphone.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_kal16/cmu_us_kal16_diphone.c"/>
+            <FILE id="eNi8U3" name="cmu_us_kal16_lpc.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_kal16/cmu_us_kal16_lpc.c"/>
+            <FILE id="TaVcbW" name="cmu_us_kal16_res.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_kal16/cmu_us_kal16_res.c"/>
+            <FILE id="Dl1MkR" name="cmu_us_kal16_residx.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_kal16/cmu_us_kal16_residx.c"/>
+            <FILE id="oUQSQ5" name="voxdefs.h" compile="0" resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_kal16/voxdefs.h"/>
+          </GROUP>
+          <GROUP id="{6C418304-516C-840B-01B9-5D0992D31242}" name="cmu_us_rms">
+            <FILE id="UEFmw9" name="cmu_us_rms.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_rms/cmu_us_rms.c"/>
+            <FILE id="oDaKBg" name="cmu_us_rms_cg.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_rms/cmu_us_rms_cg.c"/>
+            <FILE id="gnQNbQ" name="cmu_us_rms_cg_durmodel.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_rms/cmu_us_rms_cg_durmodel.c"/>
+            <FILE id="eX0XlM" name="cmu_us_rms_cg_durmodel.h" compile="0" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_rms/cmu_us_rms_cg_durmodel.h"/>
+            <FILE id="NuP2vc" name="cmu_us_rms_cg_f0_trees.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_rms/cmu_us_rms_cg_f0_trees.c"/>
+            <FILE id="R13MKS" name="cmu_us_rms_cg_f0_trees.h" compile="0" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_rms/cmu_us_rms_cg_f0_trees.h"/>
+            <FILE id="ebhmo3" name="cmu_us_rms_cg_phonestate.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_rms/cmu_us_rms_cg_phonestate.c"/>
+            <FILE id="LypVvQ" name="cmu_us_rms_cg_single_mcep_trees.c" compile="1"
+                  resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_rms/cmu_us_rms_cg_single_mcep_trees.c"/>
+            <FILE id="wcNZ7P" name="cmu_us_rms_cg_single_mcep_trees.h" compile="0"
+                  resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_rms/cmu_us_rms_cg_single_mcep_trees.h"/>
+            <FILE id="KLSXoZ" name="cmu_us_rms_cg_single_params.c" compile="1"
+                  resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_rms/cmu_us_rms_cg_single_params.c"/>
+            <FILE id="Pjjnhi" name="stdafx.h" compile="0" resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_rms/stdafx.h"/>
+            <FILE id="Lx5Mrz" name="voxdefs.h" compile="0" resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_rms/voxdefs.h"/>
+          </GROUP>
+          <GROUP id="{5DAF305E-47E8-5AA5-36CE-7581F20D3D0E}" name="cmu_us_slt">
+            <FILE id="DtB99d" name="cmu_us_slt.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_slt/cmu_us_slt.c"/>
+            <FILE id="JE6hwf" name="cmu_us_slt_cg.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_slt/cmu_us_slt_cg.c"/>
+            <FILE id="iNuW2P" name="cmu_us_slt_cg_durmodel.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_slt/cmu_us_slt_cg_durmodel.c"/>
+            <FILE id="SJfBdU" name="cmu_us_slt_cg_durmodel.h" compile="0" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_slt/cmu_us_slt_cg_durmodel.h"/>
+            <FILE id="BeKZQi" name="cmu_us_slt_cg_f0_trees.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_slt/cmu_us_slt_cg_f0_trees.c"/>
+            <FILE id="w2NFae" name="cmu_us_slt_cg_f0_trees.h" compile="0" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_slt/cmu_us_slt_cg_f0_trees.h"/>
+            <FILE id="tuJvnV" name="cmu_us_slt_cg_phonestate.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmu_us_slt/cmu_us_slt_cg_phonestate.c"/>
+            <FILE id="XuV7XI" name="cmu_us_slt_cg_single_mcep_trees.c" compile="1"
+                  resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_slt/cmu_us_slt_cg_single_mcep_trees.c"/>
+            <FILE id="FADBxq" name="cmu_us_slt_cg_single_mcep_trees.h" compile="0"
+                  resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_slt/cmu_us_slt_cg_single_mcep_trees.h"/>
+            <FILE id="z8UFSS" name="cmu_us_slt_cg_single_params.c" compile="1"
+                  resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_slt/cmu_us_slt_cg_single_params.c"/>
+            <FILE id="Gc4F4d" name="voxdefs.h" compile="0" resource="0" file="Source/flite-1.4-iphone/voices/cmu_us_slt/voxdefs.h"/>
+          </GROUP>
+          <GROUP id="{C1496418-3801-2AF3-BF13-4BD1AA3F27D6}" name="cmulex">
+            <FILE id="vfMpjl" name="cmu_lex.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/cmulex/cmu_lex.c"/>
+            <FILE id="flAEiU" name="cmu_lex.h" compile="0" resource="0" file="Source/flite-1.4-iphone/voices/cmulex/cmu_lex.h"/>
+            <FILE id="gbWHaz" name="cmu_lex_data.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/cmulex/cmu_lex_data.c"/>
+            <FILE id="UXp60D" name="cmu_lex_entries.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/cmulex/cmu_lex_entries.c"/>
+            <FILE id="YscP75" name="cmu_lts_model.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/cmulex/cmu_lts_model.c"/>
+            <FILE id="jo3tun" name="cmu_lts_model.h" compile="0" resource="0" file="Source/flite-1.4-iphone/voices/cmulex/cmu_lts_model.h"/>
+            <FILE id="bIvacY" name="cmu_lts_rules.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/cmulex/cmu_lts_rules.c"/>
+            <FILE id="t9sL7n" name="cmu_postlex.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/cmulex/cmu_postlex.c"/>
+          </GROUP>
+          <GROUP id="{9731368B-B771-23C9-B67D-DE98C3B6C4D6}" name="usenglish">
+            <FILE id="xBgKOu" name="us_aswd.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_aswd.c"/>
+            <FILE id="qnWgLA" name="us_dur_stats.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_dur_stats.c"/>
+            <FILE id="UdL7ZM" name="us_durz_cart.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_durz_cart.c"/>
+            <FILE id="VXtdpn" name="us_durz_cart.h" compile="0" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_durz_cart.h"/>
+            <FILE id="WezTha" name="us_expand.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_expand.c"/>
+            <FILE id="nm7DCj" name="us_f0.h" compile="0" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_f0.h"/>
+            <FILE id="GdVf9o" name="us_f0_model.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_f0_model.c"/>
+            <FILE id="vKjFNa" name="us_f0lr.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_f0lr.c"/>
+            <FILE id="Ac9ref" name="us_ffeatures.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_ffeatures.c"/>
+            <FILE id="jwThaj" name="us_ffeatures.h" compile="0" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_ffeatures.h"/>
+            <FILE id="D0PMOw" name="us_gpos.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_gpos.c"/>
+            <FILE id="c6Jbu1" name="us_int_accent_cart.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/usenglish/us_int_accent_cart.c"/>
+            <FILE id="zgjXjO" name="us_int_accent_cart.h" compile="0" resource="0"
+                  file="Source/flite-1.4-iphone/voices/usenglish/us_int_accent_cart.h"/>
+            <FILE id="ZcmV3t" name="us_int_tone_cart.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/usenglish/us_int_tone_cart.c"/>
+            <FILE id="zRml1G" name="us_int_tone_cart.h" compile="0" resource="0"
+                  file="Source/flite-1.4-iphone/voices/usenglish/us_int_tone_cart.h"/>
+            <FILE id="Vl9nMD" name="us_nums_cart.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_nums_cart.c"/>
+            <FILE id="Y7BRbG" name="us_nums_cart.h" compile="0" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_nums_cart.h"/>
+            <FILE id="rjRNAw" name="us_phoneset.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_phoneset.c"/>
+            <FILE id="XDryNM" name="us_phrasing_cart.c" compile="1" resource="0"
+                  file="Source/flite-1.4-iphone/voices/usenglish/us_phrasing_cart.c"/>
+            <FILE id="e1ZRC4" name="us_phrasing_cart.h" compile="0" resource="0"
+                  file="Source/flite-1.4-iphone/voices/usenglish/us_phrasing_cart.h"/>
+            <FILE id="wFE4xK" name="us_pos.tree" compile="0" resource="1" file="Source/flite-1.4-iphone/voices/usenglish/us_pos.tree"/>
+            <FILE id="nxvU7G" name="us_pos_cart.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_pos_cart.c"/>
+            <FILE id="ltwrOS" name="us_pos_cart.h" compile="0" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_pos_cart.h"/>
+            <FILE id="tBuoq1" name="us_regexes.h" compile="0" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_regexes.h"/>
+            <FILE id="uT4pEE" name="us_text.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_text.c"/>
+            <FILE id="U98NZG" name="us_text.h" compile="0" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/us_text.h"/>
+            <FILE id="r4YjRE" name="usenglish.c" compile="1" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/usenglish.c"/>
+            <FILE id="JMeeCL" name="usenglish.h" compile="0" resource="0" file="Source/flite-1.4-iphone/voices/usenglish/usenglish.h"/>
+          </GROUP>
+        </GROUP>
+      </GROUP>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_gui_audio" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_video" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="dRowAudio" showAllCode="1" useLocalCopy="1"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_QUICKTIME="disabled"/>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX" juceFolder="../../../sdks/juce/modules"
+               vstFolder="~/SDKs/vstsdk2.4" postbuildCommand="&#13;&#10;# This script takes the build product and copies it to the AU, VST, and RTAS folders, depending on &#13;&#10;# which plugin types you've built&#13;&#10;&#13;&#10;original=$CONFIGURATION_BUILD_DIR/$FULL_PRODUCT_NAME&#13;&#10;&#13;&#10;# this looks inside the binary to detect which platforms are needed.. &#13;&#10;copyAU=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'AudioUnit' | wc -l&#96;&#13;&#10;copyVST=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'VSTPlugin' | wc -l&#96;&#13;&#10;copyRTAS=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'CProcess' | wc -l&#96;&#13;&#10;copyAAX=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'ACFStartup' | wc -l&#96;&#13;&#10;&#13;&#10;if [ $copyAU -gt 0 ]; then&#13;&#10;  echo &quot;Copying to AudioUnit folder...&quot;&#13;&#10;  AU=~/Library/Audio/Plug-Ins/Components/$PRODUCT_NAME.component&#13;&#10;  if [ -d &quot;$AU&quot; ]; then &#13;&#10;    rm -r &quot;$AU&quot;&#13;&#10;  fi&#13;&#10;&#13;&#10;  cp -r &quot;$original&quot; &quot;$AU&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMwPTul/BNDLPTul/g' &quot;$AU/Contents/PkgInfo&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMw/BNDL/g' &quot;$AU/Contents/$INFOPLIST_FILE&quot;&#13;&#10;&#13;&#10;  # Fix info.plist for AUs built with Xcode 3&#13;&#10;  if [ -f &quot;$DEVELOPER_DIR/Library/Developer/CoreAudio/AudioUnits/AUPublic/AUBase/AUPlugInDispatch.cpp&quot; ]; then&#13;&#10;    echo&#13;&#10;  else&#13;&#10;    echo &quot;Removing AudioComponents entry from Info.plist because this is not a new-format AU&quot;&#13;&#10;    /usr/libexec/PlistBuddy -c &quot;Delete AudioComponents&quot; &quot;$AU/Contents/Info.plist&quot;&#13;&#10;  fi&#13;&#10;fi&#13;&#10;&#13;&#10;if [ $copyVST -gt 0 ]; then&#13;&#10;  echo &quot;Copying to VST folder...&quot;&#13;&#10;  VST=~/Library/Audio/Plug-Ins/VST/$PRODUCT_NAME.vst&#13;&#10;  if [ -d &quot;$VST&quot; ]; then &#13;&#10;    rm -r &quot;$VST&quot;&#13;&#10;  fi&#13;&#10;&#13;&#10;  cp -r &quot;$original&quot; &quot;$VST&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMwPTul/BNDLPTul/g' &quot;$VST/Contents/PkgInfo&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMw/BNDL/g' &quot;$VST/Contents/$INFOPLIST_FILE&quot;&#13;&#10;fi&#13;&#10;&#13;&#10;if [ $copyRTAS -gt 0 ]; then&#13;&#10;  echo &quot;Copying to RTAS folder...&quot;&#13;&#10;  RTAS=/Library/Application\ Support/Digidesign/Plug-Ins/$PRODUCT_NAME.dpm&#13;&#10;  if [ -d &quot;$RTAS&quot; ]; then&#13;&#10;    rm -r &quot;$RTAS&quot;&#13;&#10;  fi&#13;&#10;&#13;&#10;  cp -r &quot;$original&quot; &quot;$RTAS&quot;&#13;&#10;fi&#13;&#10;&#13;&#10;if [ $copyAAX -gt 0 ]; then&#13;&#10;  echo &quot;Copying to AAX folder...&quot;&#13;&#10;&#13;&#10;  if [ -d &quot;/Applications/ProTools_3PDev/Plug-Ins&quot; ]; then&#13;&#10;    AAX1=&quot;/Applications/ProTools_3PDev/Plug-Ins/$PRODUCT_NAME.aaxplugin&quot;&#13;&#10;&#13;&#10;    if [ -d &quot;$AAX1&quot; ]; then&#13;&#10;      rm -r &quot;$AAX1&quot;&#13;&#10;    fi&#13;&#10;&#13;&#10;    cp -r &quot;$original&quot; &quot;$AAX1&quot;&#13;&#10;  fi&#13;&#10;&#13;&#10;  if [ -d &quot;/Library/Application Support/Avid/Audio/Plug-Ins&quot; ]; then&#13;&#10;    AAX2=&quot;/Library/Application Support/Avid/Audio/Plug-Ins/$PRODUCT_NAME.aaxplugin&quot;&#13;&#10;&#13;&#10;    if [ -d &quot;$AAX2&quot; ]; then&#13;&#10;      rm -r &quot;$AAX2&quot;&#13;&#10;    fi&#13;&#10;&#13;&#10;    cp -r &quot;$original&quot; &quot;$AAX2&quot;&#13;&#10;  fi&#13;&#10;fi&#13;&#10;"
+               extraCompilerFlags="-Wall" extraLinkerFlags="-lcurl">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="1" optimisation="1" targetName="ConvergenceVST"/>
+        <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="0" optimisation="2" targetName="ConvergenceVST"/>
+      </CONFIGURATIONS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+</JUCERPROJECT>

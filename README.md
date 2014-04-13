@@ -1,4 +1,0 @@
-convergence
-===========
-
-Convergence.

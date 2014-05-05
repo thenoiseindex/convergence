@@ -8,7 +8,7 @@ namespace BinaryData
 {
 
 //================== us_pos.tree ==================
-static const unsigned char temp_52a79c5c[] =
+static const unsigned char temp_binary_data_0[] =
 "\n"
 "((name is house)\n"
 " (((j 0) (n 0.996555) (r 0) (v 0.00344514) n))\n"
@@ -377,7 +377,7 @@ static const unsigned char temp_52a79c5c[] =
 "                                    (((j 0.010847) (n 0.946476) (r 0.00017782) (v 0.042499) n))))))))))))))))))))))))))))))))))))))\n"
 ";; entropy 0.100657 perplexity 1.07226\n";
 
-const char* us_pos_tree = (const char*) temp_52a79c5c;
+const char* us_pos_tree = (const char*) temp_binary_data_0;
 
 
 const char* getNamedResource (const char*, int&) throw();
@@ -397,5 +397,10 @@ const char* getNamedResource (const char* resourceNameUTF8, int& numBytes) throw
     numBytes = 0;
     return 0;
 }
+
+const char* namedResourceList[] =
+{
+    "us_pos_tree"
+};
 
 }

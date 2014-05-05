@@ -1,24 +1,23 @@
 /*
   ==============================================================================
 
-   This file is part of the JUCE library - "Jules' Utility Class Extensions"
-   Copyright 2004-11 by Raw Material Software Ltd.
+   This file is part of the JUCE library.
+   Copyright (c) 2013 - Raw Material Software Ltd.
 
-  ------------------------------------------------------------------------------
+   Permission is granted to use this software under the terms of either:
+   a) the GPL v2 (or any later version)
+   b) the Affero GPL v3
 
-   JUCE can be redistributed and/or modified under the terms of the GNU General
-   Public License (Version 2), as published by the Free Software Foundation.
-   A copy of the license is included in the JUCE distribution, or can be found
-   online at www.gnu.org/licenses.
+   Details of these licenses can be found at: www.gnu.org/licenses
 
    JUCE is distributed in the hope that it will be useful, but WITHOUT ANY
    WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
    A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
-  ------------------------------------------------------------------------------
+   ------------------------------------------------------------------------------
 
    To release a closed-source product which uses JUCE, commercial licenses are
-   available: visit www.rawmaterialsoftware.com/juce for more information.
+   available: visit www.juce.com for more information.
 
   ==============================================================================
 */
@@ -29,8 +28,7 @@ AudioProcessorPlayer::AudioProcessorPlayer()
       blockSize (0),
       isPrepared (false),
       numInputChans (0),
-      numOutputChans (0),
-      tempBuffer (1, 1)
+      numOutputChans (0)
 {
 }
 
@@ -46,9 +44,7 @@ void AudioProcessorPlayer::setProcessor (AudioProcessor* const processorToPlay)
     {
         if (processorToPlay != nullptr && sampleRate > 0 && blockSize > 0)
         {
-            processorToPlay->setPlayConfigDetails (numInputChans, numOutputChans,
-                                                   sampleRate, blockSize);
-
+            processorToPlay->setPlayConfigDetails (numInputChans, numOutputChans, sampleRate, blockSize);
             processorToPlay->prepareToPlay (sampleRate, blockSize);
         }
 
@@ -97,7 +93,7 @@ void AudioProcessorPlayer::audioDeviceIOCallback (const float** const inputChann
 
         for (int i = numOutputChannels; i < numInputChannels; ++i)
         {
-            channels[totalNumChans] = tempBuffer.getSampleData (i - numOutputChannels, 0);
+            channels[totalNumChans] = tempBuffer.getWritePointer (i - numOutputChannels);
             memcpy (channels[totalNumChans], inputChannelData[i], sizeof (float) * (size_t) numSamples);
             ++totalNumChans;
         }
@@ -121,22 +117,23 @@ void AudioProcessorPlayer::audioDeviceIOCallback (const float** const inputChann
 
     AudioSampleBuffer buffer (channels, totalNumChans, numSamples);
 
-    const ScopedLock sl (lock);
-
-    if (processor != nullptr)
     {
-        const ScopedLock sl2 (processor->getCallbackLock());
+        const ScopedLock sl (lock);
 
-        if (processor->isSuspended())
+        if (processor != nullptr)
         {
-            for (int i = 0; i < numOutputChannels; ++i)
-                zeromem (outputChannelData[i], sizeof (float) * (size_t) numSamples);
-        }
-        else
-        {
-            processor->processBlock (buffer, incomingMidi);
+            const ScopedLock sl2 (processor->getCallbackLock());
+
+            if (! processor->isSuspended())
+            {
+                processor->processBlock (buffer, incomingMidi);
+                return;
+            }
         }
     }
+
+    for (int i = 0; i < numOutputChannels; ++i)
+        FloatVectorOperations::clear (outputChannelData[i], numSamples);
 }
 
 void AudioProcessorPlayer::audioDeviceAboutToStart (AudioIODevice* const device)
@@ -154,7 +151,7 @@ void AudioProcessorPlayer::audioDeviceAboutToStart (AudioIODevice* const device)
     numOutputChans = numChansOut;
 
     messageCollector.reset (sampleRate);
-    channels.calloc (jmax (numChansIn, numChansOut) + 2);
+    channels.calloc ((size_t) jmax (numChansIn, numChansOut) + 2);
 
     if (processor != nullptr)
     {

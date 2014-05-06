@@ -61,7 +61,7 @@ void TTS::run(){
             ttsBuffer.setSize(1, wave->num_samples);
             ttsBuffer.clear();
             
-            float* ttsChannelData = ttsBuffer.getSampleData (0);
+            float* ttsChannelData = ttsBuffer.getWritePointer (0);
             short* waveData = wave->samples;
             
             for (int i = 0; i < wave->num_samples; ++i) {
@@ -70,13 +70,6 @@ void TTS::run(){
                 waveData++;
                 ttsChannelData++;
             }
-            
-            //upsampledTTSBuffer.setSize(1, roundToInt(wave->num_samples*(44100.0/srate)));
-            //upsampledTTSBuffer.clear();
-            //sampleRateConverter.process(ttsBuffer.getArrayOfChannels(), ttsBuffer.getNumChannels(), ttsBuffer.getNumSamples(), upsampledTTSBuffer.getArrayOfChannels(), upsampledTTSBuffer.getNumChannels(), upsampledTTSBuffer.getNumSamples());
-            
-            //upsampledTTSBuffer.applyGainRamp(0, 200, 0.0, 1.0);
-            //upsampledTTSBuffer.applyGainRamp(upsampledTTSBuffer.getNumSamples()-200, 200, 1.0, 0.0);
             
             ttsChannelData = ttsChannelData - wave->num_samples;
             
@@ -87,7 +80,7 @@ void TTS::run(){
             
             double nextSample = 0.0;
             
-            float* upsampledttsChannelData = upsampledTTSBuffer.getSampleData (0);
+            float* upsampledttsChannelData = upsampledTTSBuffer.getWritePointer (0);
             
             for (int s = 0; s < upsampledTTSBuffer.getNumSamples(); ++s)
             {
@@ -102,9 +95,6 @@ void TTS::run(){
                 
                 nextSample += localRatio;
             }
-            
-            //upsampledTTSBuffer.applyGainRamp(0, 200, 0.0, 1.0);
-            //upsampledTTSBuffer.applyGainRamp(upsampledTTSBuffer.getNumSamples()-200, 200, 1.0, 0.0);
             
             for (int i = 1; i < upsampledTTSBuffer.getNumChannels(); ++i)
             {
@@ -159,13 +149,13 @@ void TTS::setVoice(int voiceToSet){
     }
 }
 
-void TTS::getNextAudioBlock (const AudioSampleBuffer &bufferToFill){
-    
-    float* blockToFill = bufferToFill.getSampleData(0);
-    
+void TTS::getNextAudioBlock ( AudioSampleBuffer &bufferToFill){
+   
+    float* blockToFill =  bufferToFill.getWritePointer(0);
+
     if (bufferReady) {
-        
-        float* ttsChannelData = upsampledTTSBuffer.getSampleData(0, samplesProcessed);
+        float* ttsChannelData = upsampledTTSBuffer.getWritePointer(0, samplesProcessed);
+        //float* ttsChannelData = upsampledTTSBuffer.getSampleData(0, samplesProcessed);
         
         if ((samplesProcessed + bufferToFill.getNumSamples()) < upsampledTTSBuffer.getNumSamples()) {
             for (int i = 0; i < bufferToFill.getNumSamples(); ++i) {

@@ -13,6 +13,8 @@
               includeBinaryInAppConfig="1">
   <MAINGROUP id="oIGxTd" name="ConvergenceVST">
     <GROUP id="{276BD5A2-847E-15B3-13DB-E101DC580D7F}" name="Source">
+      <FILE id="CQEQGu" name="FlipmuTwitcurl.h" compile="0" resource="0"
+            file="Source/FlipmuTwitcurl.h"/>
       <FILE id="NAwmKD" name="Tweet.h" compile="0" resource="0" file="Source/Tweet.h"/>
       <FILE id="hxQqur" name="TwitterHandler.cpp" compile="1" resource="0"
             file="Source/TwitterHandler.cpp"/>
@@ -29,6 +31,44 @@
       <FILE id="IhHIZk" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
     </GROUP>
     <GROUP id="{254A2DF4-534D-ADAC-0210-1434CBA01B51}" name="libraries">
+      <GROUP id="{0C88E5CA-E649-E5F5-BCBD-318F3726CD31}" name="libtwitcurl">
+        <FILE id="kGAqIC" name="base64.cpp" compile="1" resource="0" file="Source/libtwitcurl/base64.cpp"/>
+        <FILE id="GnIC5j" name="base64.h" compile="0" resource="0" file="Source/libtwitcurl/base64.h"/>
+        <FILE id="l06LzH" name="CMakeLists.txt" compile="0" resource="1" file="Source/libtwitcurl/CMakeLists.txt"/>
+        <FILE id="NYFK3G" name="COPYING" compile="0" resource="1" file="Source/libtwitcurl/COPYING"/>
+        <FILE id="B9OxWu" name="HMAC_SHA1.cpp" compile="1" resource="0" file="Source/libtwitcurl/HMAC_SHA1.cpp"/>
+        <FILE id="DPRlKO" name="HMAC_SHA1.h" compile="0" resource="0" file="Source/libtwitcurl/HMAC_SHA1.h"/>
+        <GROUP id="{66701600-CD71-B211-2CA0-A4DD5E9838DC}" name="include">
+          <GROUP id="{D499DDC7-CAF5-787D-7E60-86D90EB4FB90}" name="curl">
+            <FILE id="JwoUDL" name="curl.h" compile="0" resource="0" file="Source/libtwitcurl/include/curl/curl.h"/>
+            <FILE id="Dn0itP" name="curlbuild.h" compile="0" resource="0" file="Source/libtwitcurl/include/curl/curlbuild.h"/>
+            <FILE id="Tg0tlK" name="curlrules.h" compile="0" resource="0" file="Source/libtwitcurl/include/curl/curlrules.h"/>
+            <FILE id="GhrwTZ" name="curlver.h" compile="0" resource="0" file="Source/libtwitcurl/include/curl/curlver.h"/>
+            <FILE id="sjnGJT" name="easy.h" compile="0" resource="0" file="Source/libtwitcurl/include/curl/easy.h"/>
+            <FILE id="yhon3A" name="mprintf.h" compile="0" resource="0" file="Source/libtwitcurl/include/curl/mprintf.h"/>
+            <FILE id="KODVnX" name="multi.h" compile="0" resource="0" file="Source/libtwitcurl/include/curl/multi.h"/>
+            <FILE id="uH7xdv" name="stdcheaders.h" compile="0" resource="0" file="Source/libtwitcurl/include/curl/stdcheaders.h"/>
+            <FILE id="ExTXfC" name="typecheck-gcc.h" compile="0" resource="0" file="Source/libtwitcurl/include/curl/typecheck-gcc.h"/>
+          </GROUP>
+        </GROUP>
+        <GROUP id="{8EDDE27D-8CFD-DFD4-0866-59C7D88D5065}" name="lib">
+          <FILE id="Tzb8S8" name="libcurl.lib" compile="0" resource="1" file="Source/libtwitcurl/lib/libcurl.lib"/>
+        </GROUP>
+        <FILE id="aYLFU2" name="Makefile" compile="0" resource="1" file="Source/libtwitcurl/Makefile"/>
+        <FILE id="UVjkYu" name="oauthlib.cpp" compile="1" resource="0" file="Source/libtwitcurl/oauthlib.cpp"/>
+        <FILE id="dy5o57" name="oauthlib.h" compile="0" resource="0" file="Source/libtwitcurl/oauthlib.h"/>
+        <FILE id="LUrrHn" name="SHA1.cpp" compile="1" resource="0" file="Source/libtwitcurl/SHA1.cpp"/>
+        <FILE id="tYwLEK" name="SHA1.h" compile="0" resource="0" file="Source/libtwitcurl/SHA1.h"/>
+        <FILE id="NAH0u0" name="twitcurl.cpp" compile="1" resource="0" file="Source/libtwitcurl/twitcurl.cpp"/>
+        <FILE id="QXPk8f" name="twitcurl.dsp" compile="0" resource="1" file="Source/libtwitcurl/twitcurl.dsp"/>
+        <FILE id="yrfpJl" name="twitcurl.dsw" compile="0" resource="1" file="Source/libtwitcurl/twitcurl.dsw"/>
+        <FILE id="K5aAmf" name="twitcurl.h" compile="0" resource="0" file="Source/libtwitcurl/twitcurl.h"/>
+        <FILE id="BRf8Oc" name="twitcurl.sln" compile="0" resource="1" file="Source/libtwitcurl/twitcurl.sln"/>
+        <FILE id="CvEWCJ" name="twitcurl.vcproj" compile="0" resource="1" file="Source/libtwitcurl/twitcurl.vcproj"/>
+        <FILE id="cdLfXR" name="twitcurlurls.h" compile="0" resource="0" file="Source/libtwitcurl/twitcurlurls.h"/>
+        <FILE id="bg9ZxA" name="urlencode.cpp" compile="1" resource="0" file="Source/libtwitcurl/urlencode.cpp"/>
+        <FILE id="M2TWKQ" name="urlencode.h" compile="0" resource="0" file="Source/libtwitcurl/urlencode.h"/>
+      </GROUP>
       <FILE id="mVCU06" name="flite_voice_list.c" compile="1" resource="0"
             file="Source/flite_voice_list.c"/>
       <GROUP id="{31F876EE-F8B1-2161-343D-F124596B05CE}" name="flite-1">
@@ -263,7 +303,6 @@
     </GROUP>
   </MAINGROUP>
   <MODULES>
-    <MODULE id="dRowAudio" showAllCode="1" useLocalCopy="1"/>
     <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="1"/>
     <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="1"/>
     <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="1"/>
@@ -275,7 +314,6 @@
     <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="1"/>
     <MODULE id="juce_events" showAllCode="1" useLocalCopy="1"/>
     <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="1"/>
-    <MODULE id="juce_gui_audio" showAllCode="1" useLocalCopy="1"/>
     <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="1"/>
     <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="1"/>
     <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="1"/>
@@ -283,20 +321,20 @@
   </MODULES>
   <JUCEOPTIONS JUCE_QUICKTIME="disabled"/>
   <EXPORTFORMATS>
-    <XCODE_MAC targetFolder="Builds/MacOSX" vstFolder="~/SDKs/vstsdk2.4" postbuildCommand="&#13;&#10;# This script takes the build product and copies it to the AU, VST, and RTAS folders, depending on &#13;&#10;# which plugin types you've built&#13;&#10;&#13;&#10;original=$CONFIGURATION_BUILD_DIR/$FULL_PRODUCT_NAME&#13;&#10;&#13;&#10;# this looks inside the binary to detect which platforms are needed.. &#13;&#10;copyAU=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'AudioUnit' | wc -l&#96;&#13;&#10;copyVST=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'VSTPlugin' | wc -l&#96;&#13;&#10;copyRTAS=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'CProcess' | wc -l&#96;&#13;&#10;copyAAX=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'ACFStartup' | wc -l&#96;&#13;&#10;&#13;&#10;if [ $copyAU -gt 0 ]; then&#13;&#10;  echo &quot;Copying to AudioUnit folder...&quot;&#13;&#10;  AU=~/Library/Audio/Plug-Ins/Components/$PRODUCT_NAME.component&#13;&#10;  if [ -d &quot;$AU&quot; ]; then &#13;&#10;    rm -r &quot;$AU&quot;&#13;&#10;  fi&#13;&#10;&#13;&#10;  cp -r &quot;$original&quot; &quot;$AU&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMwPTul/BNDLPTul/g' &quot;$AU/Contents/PkgInfo&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMw/BNDL/g' &quot;$AU/Contents/$INFOPLIST_FILE&quot;&#13;&#10;&#13;&#10;  # Fix info.plist for AUs built with Xcode 3&#13;&#10;  if [ -f &quot;$DEVELOPER_DIR/Library/Developer/CoreAudio/AudioUnits/AUPublic/AUBase/AUPlugInDispatch.cpp&quot; ]; then&#13;&#10;    echo&#13;&#10;  else&#13;&#10;    echo &quot;Removing AudioComponents entry from Info.plist because this is not a new-format AU&quot;&#13;&#10;    /usr/libexec/PlistBuddy -c &quot;Delete AudioComponents&quot; &quot;$AU/Contents/Info.plist&quot;&#13;&#10;  fi&#13;&#10;fi&#13;&#10;&#13;&#10;if [ $copyVST -gt 0 ]; then&#13;&#10;  echo &quot;Copying to VST folder...&quot;&#13;&#10;  VST=~/Library/Audio/Plug-Ins/VST/$PRODUCT_NAME.vst&#13;&#10;  if [ -d &quot;$VST&quot; ]; then &#13;&#10;    rm -r &quot;$VST&quot;&#13;&#10;  fi&#13;&#10;&#13;&#10;  cp -r &quot;$original&quot; &quot;$VST&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMwPTul/BNDLPTul/g' &quot;$VST/Contents/PkgInfo&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMw/BNDL/g' &quot;$VST/Contents/$INFOPLIST_FILE&quot;&#13;&#10;fi&#13;&#10;&#13;&#10;if [ $copyRTAS -gt 0 ]; then&#13;&#10;  echo &quot;Copying to RTAS folder...&quot;&#13;&#10;  RTAS=/Library/Application\ Support/Digidesign/Plug-Ins/$PRODUCT_NAME.dpm&#13;&#10;  if [ -d &quot;$RTAS&quot; ]; then&#13;&#10;    rm -r &quot;$RTAS&quot;&#13;&#10;  fi&#13;&#10;&#13;&#10;  cp -r &quot;$original&quot; &quot;$RTAS&quot;&#13;&#10;fi&#13;&#10;&#13;&#10;if [ $copyAAX -gt 0 ]; then&#13;&#10;  echo &quot;Copying to AAX folder...&quot;&#13;&#10;&#13;&#10;  if [ -d &quot;/Applications/ProTools_3PDev/Plug-Ins&quot; ]; then&#13;&#10;    AAX1=&quot;/Applications/ProTools_3PDev/Plug-Ins/$PRODUCT_NAME.aaxplugin&quot;&#13;&#10;&#13;&#10;    if [ -d &quot;$AAX1&quot; ]; then&#13;&#10;      rm -r &quot;$AAX1&quot;&#13;&#10;    fi&#13;&#10;&#13;&#10;    cp -r &quot;$original&quot; &quot;$AAX1&quot;&#13;&#10;  fi&#13;&#10;&#13;&#10;  if [ -d &quot;/Library/Application Support/Avid/Audio/Plug-Ins&quot; ]; then&#13;&#10;    AAX2=&quot;/Library/Application Support/Avid/Audio/Plug-Ins/$PRODUCT_NAME.aaxplugin&quot;&#13;&#10;&#13;&#10;    if [ -d &quot;$AAX2&quot; ]; then&#13;&#10;      rm -r &quot;$AAX2&quot;&#13;&#10;    fi&#13;&#10;&#13;&#10;    cp -r &quot;$original&quot; &quot;$AAX2&quot;&#13;&#10;  fi&#13;&#10;fi&#13;&#10;"
-               extraCompilerFlags="-Wall" extraLinkerFlags="-lcurl">
+    <XCODE_MAC targetFolder="Builds/MacOSX" vstFolder="~/SDKs/vstsdk2.4" postbuildCommand="&#10;# This script takes the build product and copies it to the AU, VST, and RTAS folders, depending on &#10;# which plugin types you've built&#10;&#10;original=$CONFIGURATION_BUILD_DIR/$FULL_PRODUCT_NAME&#10;&#10;# this looks inside the binary to detect which platforms are needed.. &#10;copyAU=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'AudioUnit' | wc -l&#96;&#10;copyVST=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'VSTPlugin' | wc -l&#96;&#10;copyRTAS=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'CProcess' | wc -l&#96;&#10;copyAAX=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'ACFStartup' | wc -l&#96;&#10;&#10;if [ $copyAU -gt 0 ]; then&#10;  echo &quot;Copying to AudioUnit folder...&quot;&#10;  AU=~/Library/Audio/Plug-Ins/Components/$PRODUCT_NAME.component&#10;  if [ -d &quot;$AU&quot; ]; then &#10;    rm -r &quot;$AU&quot;&#10;  fi&#10;&#10;  cp -r &quot;$original&quot; &quot;$AU&quot;&#10;  sed -i &quot;&quot; -e 's/TDMwPTul/BNDLPTul/g' &quot;$AU/Contents/PkgInfo&quot;&#10;  sed -i &quot;&quot; -e 's/TDMw/BNDL/g' &quot;$AU/Contents/$INFOPLIST_FILE&quot;&#10;&#10;  # Fix info.plist for AUs built with Xcode 3&#10;  if [ -f &quot;$DEVELOPER_DIR/Library/Developer/CoreAudio/AudioUnits/AUPublic/AUBase/AUPlugInDispatch.cpp&quot; ]; then&#10;    echo&#10;  else&#10;    echo &quot;Removing AudioComponents entry from Info.plist because this is not a new-format AU&quot;&#10;    /usr/libexec/PlistBuddy -c &quot;Delete AudioComponents&quot; &quot;$AU/Contents/Info.plist&quot;&#10;  fi&#10;fi&#10;&#10;if [ $copyVST -gt 0 ]; then&#10;  echo &quot;Copying to VST folder...&quot;&#10;  VST=~/Library/Audio/Plug-Ins/VST/$PRODUCT_NAME.vst&#10;  if [ -d &quot;$VST&quot; ]; then &#10;    rm -r &quot;$VST&quot;&#10;  fi&#10;&#10;  cp -r &quot;$original&quot; &quot;$VST&quot;&#10;  sed -i &quot;&quot; -e 's/TDMwPTul/BNDLPTul/g' &quot;$VST/Contents/PkgInfo&quot;&#10;  sed -i &quot;&quot; -e 's/TDMw/BNDL/g' &quot;$VST/Contents/$INFOPLIST_FILE&quot;&#10;fi&#10;&#10;if [ $copyRTAS -gt 0 ]; then&#10;  echo &quot;Copying to RTAS folder...&quot;&#10;  RTAS=/Library/Application\ Support/Digidesign/Plug-Ins/$PRODUCT_NAME.dpm&#10;  if [ -d &quot;$RTAS&quot; ]; then&#10;    rm -r &quot;$RTAS&quot;&#10;  fi&#10;&#10;  cp -r &quot;$original&quot; &quot;$RTAS&quot;&#10;fi&#10;&#10;if [ $copyAAX -gt 0 ]; then&#10;  echo &quot;Copying to AAX folder...&quot;&#10;&#10;  if [ -d &quot;/Applications/ProTools_3PDev/Plug-Ins&quot; ]; then&#10;    AAX1=&quot;/Applications/ProTools_3PDev/Plug-Ins/$PRODUCT_NAME.aaxplugin&quot;&#10;&#10;    if [ -d &quot;$AAX1&quot; ]; then&#10;      rm -r &quot;$AAX1&quot;&#10;    fi&#10;&#10;    cp -r &quot;$original&quot; &quot;$AAX1&quot;&#10;  fi&#10;&#10;  if [ -d &quot;/Library/Application Support/Avid/Audio/Plug-Ins&quot; ]; then&#10;    AAX2=&quot;/Library/Application Support/Avid/Audio/Plug-Ins/$PRODUCT_NAME.aaxplugin&quot;&#10;&#10;    if [ -d &quot;$AAX2&quot; ]; then&#10;      rm -r &quot;$AAX2&quot;&#10;    fi&#10;&#10;    cp -r &quot;$original&quot; &quot;$AAX2&quot;&#10;  fi&#10;fi&#10;"
+               extraCompilerFlags="" extraLinkerFlags="-L/usr/lib -lcurl -lssl -lcrypto -lz">
       <CONFIGURATIONS>
-        <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
-                       isDebug="1" optimisation="1" targetName="ConvergenceVST"/>
-        <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
-                       isDebug="0" optimisation="2" targetName="ConvergenceVST"/>
+        <CONFIGURATION name="Debug" osxSDK="10.8 SDK" osxCompatibility="10.8 SDK" osxArchitecture="32BitUniversal"
+                       isDebug="1" optimisation="3" targetName="ConvergenceVST" linkTimeOptimisation="0"/>
+        <CONFIGURATION name="Release" osxSDK="10.8 SDK" osxCompatibility="10.8 SDK"
+                       osxArchitecture="32BitUniversal" isDebug="0" optimisation="3"
+                       targetName="ConvergenceVST" linkTimeOptimisation="1"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_video" path="JuceLibraryCode/modules"/>
         <MODULEPATH id="juce_opengl" path="JuceLibraryCode/modules"/>
         <MODULEPATH id="juce_gui_extra" path="JuceLibraryCode/modules"/>
         <MODULEPATH id="juce_gui_basics" path="JuceLibraryCode/modules"/>
-        <MODULEPATH id="juce_gui_audio" path="JuceLibraryCode/modules"/>
         <MODULEPATH id="juce_graphics" path="JuceLibraryCode/modules"/>
         <MODULEPATH id="juce_events" path="JuceLibraryCode/modules"/>
         <MODULEPATH id="juce_data_structures" path="JuceLibraryCode/modules"/>
@@ -308,7 +346,6 @@
         <MODULEPATH id="juce_audio_formats" path="JuceLibraryCode/modules"/>
         <MODULEPATH id="juce_audio_devices" path="JuceLibraryCode/modules"/>
         <MODULEPATH id="juce_audio_basics" path="JuceLibraryCode/modules"/>
-        <MODULEPATH id="dRowAudio" path="JuceLibraryCode/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
   </EXPORTFORMATS>

@@ -12,7 +12,8 @@
 
 TwitterHandler::TwitterHandler() :connected(false), tweetUpdateInterval(1000)
 {
-    setTrendGeoLocation(Global);
+    twitt.setup(name, pass, c_k, c_s);
+    setTrendGeoLocation(NY);
     startTimer(15 * 60000);
 }
 
@@ -34,17 +35,19 @@ void TwitterHandler::disconnect() {
 
 bool TwitterHandler::updateTrends() {
     
-    URL url("http://api.twitter.com/1/trends/" + trendWOEID + ".json");
+    //URL url("http://api.twitter.com/1/trends/" + trendWOEID + ".json");
 
     // Attempt to open and parse JSON URL
-    ScopedPointer<InputStream> urlStream(url.createInputStream(false));
-    var trendsParsed = JSON::parse(*urlStream);
-    
+    //ScopedPointer<InputStream> urlStream(url.createInputStream(false));
+    twitt.getTrend(trendWOEID.toStdString());
+    var trendsParsed = JSON::parse(twitt.getData());
     var masterJSON = (*trendsParsed.getArray())[0];
     var trends = masterJSON.getProperty((Identifier)"trends", -1);
-    
+    DBG("number of trends");
+    DBG(trends.size());
     for(int i = 0; i < trends.size(); i++)
     {
+        
         topTrends.add(trends[i].getProperty((Identifier)"query", -1).toString());
         DBG(topTrends[i]);
     }
@@ -78,23 +81,25 @@ void TwitterHandler::updateTweets() {
 }
 
 void TwitterHandler::startTwitterPostQuery(String keywords, int repliesPerPage, int pageIndex, int queryIdentifier) {
-	
-    String query = "http://search.twitter.com/search.json?q=";
-	query += keywords;
-	query += "&rpp=" + String(repliesPerPage);
-	query += "&result_type=recent";
+    std::cout << "starting query... " << keywords.toStdString() << std::endl;
+    //String query = "http://search.twitter.com/search.json?q=";
+	//query += keywords;
+	//query += "&rpp=" + String(repliesPerPage);
+	//query += "&result_type=recent";
     
     tweetQueryIdentifier = queryIdentifier;
     
-    URL authURL(query);
+    //URL authURL(query);
     
-    ScopedPointer<InputStream> urlStream(authURL.createInputStream(false));
+    //ScopedPointer<InputStream> urlStream(authURL.createInputStream(false));
     
-    var tweetParsed = JSON::parse(*urlStream);
-    var JSONtweets = tweetParsed.getProperty((Identifier) "results", -1);
+    twitt.search( keywords.replace("+", "%2B").toStdString());
+    DBG(keywords);
+    var tweetParsed = JSON::parse(twitt.getData());
+    var JSONtweets = tweetParsed.getProperty((Identifier) "statuses", -1);
         
     tweets.clear();
-    
+    DBG("number of tweets");
     DBG(JSONtweets.size());
     for (int i = 0; i < JSONtweets.size(); i++) {
         

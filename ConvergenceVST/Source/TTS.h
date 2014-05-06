@@ -17,7 +17,6 @@
 #include "flite.h"
 #include "JuceHeader.h"
 #include <queue>
-#include "dRowAudio.h"
 
 
 class TTS : public ChangeBroadcaster, public Timer, public Thread {
@@ -32,7 +31,7 @@ public:
     void setNextTweetTimeMax(int interval);
 	void convertToAudio(String text, int samplingRate);
     
-    void getNextAudioBlock (const AudioSampleBuffer &bufferToFill);
+    void getNextAudioBlock (AudioSampleBuffer &bufferToFill);
     void timerCallback();
     
     void run();
@@ -46,7 +45,6 @@ private:
 
 	AudioSampleBuffer ttsBuffer; //ofSoundBuffer soundBuffer;
     AudioSampleBuffer upsampledTTSBuffer;
-    drow::SampleRateConverter sampleRateConverter;
     int samplesProcessed;
     
     int nextTweetTimeMax;

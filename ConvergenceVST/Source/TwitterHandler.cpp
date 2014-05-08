@@ -82,17 +82,9 @@ void TwitterHandler::updateTweets() {
 
 void TwitterHandler::startTwitterPostQuery(String keywords, int repliesPerPage, int pageIndex, int queryIdentifier) {
     std::cout << "starting query... " << keywords.toStdString() << std::endl;
-    //String query = "http://search.twitter.com/search.json?q=";
-	//query += keywords;
-	//query += "&rpp=" + String(repliesPerPage);
-	//query += "&result_type=recent";
     
     tweetQueryIdentifier = queryIdentifier;
-    
-    //URL authURL(query);
-    
-    //ScopedPointer<InputStream> urlStream(authURL.createInputStream(false));
-    
+ 
     twitt.search( keywords.replace("+", "%2B").toStdString());
     DBG(keywords);
     var tweetParsed = JSON::parse(twitt.getData());
@@ -107,7 +99,7 @@ void TwitterHandler::startTwitterPostQuery(String keywords, int repliesPerPage, 
         
         tweet.id = JSONtweets[i].getProperty((Identifier) "id", -1).toString();
         tweet.text = JSONtweets[i].getProperty((Identifier) "text", -1).toString();
-        DBG(tweet.text);
+        //DBG(tweet.text);
         tweet.created_at = JSONtweets[i].getProperty((Identifier) "created_at", -1).toString();
         tweet.author.uri = JSONtweets[i].getProperty((Identifier) "from_user_id_str", -1).toString();
         tweet.author.name = JSONtweets[i].getProperty((Identifier) "from_user_name", -1).toString();
@@ -127,7 +119,7 @@ String TwitterHandler::getRandomTweet() {
     if (isConnected() && hasTweets())
     {
         String result = tweets[Random::getSystemRandom().nextInt(tweets.size()-1)].text;
-        DBG(result);
+        //DBG(result);
         return result;
     }else{
         return "empty";
@@ -136,7 +128,7 @@ String TwitterHandler::getRandomTweet() {
 
 void TwitterHandler::searchResult(Array<Tweet> results, int queryType) {
 
-    DBG("tweets size:" + String(tweets.size()) + " results size: " + String(results.size()));
+    //DBG("tweets size:" + String(tweets.size()) + " results size: " + String(results.size()));
     
     for(int i = 0; i < tweets.size(); i++)
     {

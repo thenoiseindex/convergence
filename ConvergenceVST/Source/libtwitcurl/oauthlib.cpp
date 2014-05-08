@@ -331,7 +331,7 @@ void oAuth::buildOAuthRawDataKeyValPairs( const std::string& rawData,
         rawDataKeyValuePairs[dataKey] = urlencodeData ? urlencode( dataVal ) : dataVal;
         
         //std::cout << "URLENCODE: " << urlencode( dataVal ) << " NOENCODE: " << dataVal << " KEY: " << dataKey << std::endl;
-        std::cout << rawDataKeyValuePairs[dataKey] << std::endl;
+        //std::cout << rawDataKeyValuePairs[dataKey] << std::endl;
     }
 }
 

@@ -57,10 +57,10 @@ public:
         
         std::string authUrl;
 
-        DBG(twitterObj.oAuthRequestToken(authUrl));
-        DBG(twitterObj.oAuthHandlePIN( authUrl ));
+        twitterObj.oAuthRequestToken(authUrl);
+        twitterObj.oAuthHandlePIN( authUrl );
         DBG("connect");
-        DBG(twitterObj.oAuthAccessToken());
+        twitterObj.oAuthAccessToken();
         
     }
     
@@ -262,7 +262,7 @@ public:
         else
         {
             twitterObj.getLastCurlError( replyMsg );
-            //printf( "\ntwitterClient:: twitCurl::search error:\n%s\n", replyMsg.c_str() );
+            printf( "\ntwitterClient:: twitCurl::search error:\n%s\n", replyMsg.c_str() );
         }
         
     }
@@ -308,7 +308,7 @@ public:
         if( twitterObj.trendsPlaceGet(WOEID) )
         {
             twitterObj.getLastWebResponse( replyMsg );
-            printf( "\ntwitterClient:: twitCurl::trendsDailyGet web response:\n%s\n", replyMsg.c_str() );
+            //printf( "\ntwitterClient:: twitCurl::trendsDailyGet web response:\n%s\n", replyMsg.c_str() );
         }
         else
         {

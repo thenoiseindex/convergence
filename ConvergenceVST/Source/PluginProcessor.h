@@ -73,7 +73,9 @@ public:
     void changeListenerCallback (ChangeBroadcaster* source);
 
 private:
-    TTS ttsChannel;
+    int numChannels;
+    OwnedArray<TTS> ttsBuffers;
+    //TTS ttsChannel;
     TwitterHandler twitterHandler;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ConvergenceVstAudioProcessor)

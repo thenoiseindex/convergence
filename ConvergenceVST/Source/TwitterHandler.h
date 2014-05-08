@@ -85,8 +85,8 @@ private:
     int             tweetUpdateInterval;        // rate at which to update tweets
 	Array <Tweet>   tweets;                     // current tweets retrieved
     
-    std::string name = "user";
-    std::string pass = "pass";
+    std::string name = "jnatanh";
+    std::string pass = "ros1n3rosine";
     std::string c_k = "OE1zmCWhbTM2r6DmnDR5G6ytE";
     std::string c_s = "hwUmYtAZMr123HNPfLYn1eYyUli13dbDpk2CkEiuA5ALYIYL9p";
     

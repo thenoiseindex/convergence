@@ -35,6 +35,7 @@ public:
     void timerCallback();
     
     void run();
+    void setOutputChannel(int chan){outputChannel = chan;};
     
 private:
     bool bufferReady;
@@ -50,7 +51,8 @@ private:
     int nextTweetTimeMax;
     
     String textToConvert;
-        
+    
+    int outputChannel;
 };
 
 #endif  // __TTS_H_ABF67C39__

@@ -13,11 +13,16 @@
 
 
 //==============================================================================
-ConvergenceVstAudioProcessor::ConvergenceVstAudioProcessor()
+ConvergenceVstAudioProcessor::ConvergenceVstAudioProcessor() : numChannels(15)
 {
-    ttsChannel.setVoice(0);
-    ttsChannel.initialize();
-    ttsChannel.addChangeListener(this);
+    for (int i=0; i<numChannels; i++) {
+        ttsBuffers.add(new TTS());
+        ttsBuffers.getLast()->setOutputChannel(i);
+        ttsBuffers.getLast()->setVoice(Random::getSystemRandom().nextInt(4));
+        ttsBuffers.getLast()->initialize();
+        ttsBuffers.getLast()->addChangeListener(this);
+    }
+    
     twitterHandler.init();
     twitterHandler.updateTrends();
     twitterHandler.updateTweets();
@@ -29,17 +34,25 @@ ConvergenceVstAudioProcessor::~ConvergenceVstAudioProcessor()
 }
 
 void ConvergenceVstAudioProcessor::generateText(){
-    ttsChannel.addText("Hello");
+    for (int i=0; i<numChannels; i++) {
+        ttsBuffers[i]->addText("Hello");
+    }
+    //ttsChannel.addText("Hello");
 }
 
 void ConvergenceVstAudioProcessor::setMaxTweetInterval(int interval){
-    ttsChannel.setNextTweetTimeMax(interval);
+    for (int i=0; i<numChannels; i++) {
+        ttsBuffers[i]->setNextTweetTimeMax(interval);
+    }
 }
 
 void ConvergenceVstAudioProcessor::changeListenerCallback (ChangeBroadcaster* source){
-    if(source == &ttsChannel){
-        ttsChannel.setVoice(Random::getSystemRandom().nextInt(4));
-        ttsChannel.addText(twitterHandler.getRandomTweet());
+    
+    for (int i=0; i<numChannels; i++) {
+        if(source == ttsBuffers[i]){
+            ttsBuffers[i]->setVoice(Random::getSystemRandom().nextInt(4));
+            ttsBuffers[i]->addText(twitterHandler.getRandomTweet());
+        }
     }
 }
 
@@ -159,8 +172,11 @@ void ConvergenceVstAudioProcessor::releaseResources()
 
 void ConvergenceVstAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffer& midiMessages)
 {
+    for (int i=0; i<numChannels; i++) {
+        ttsBuffers[i]->getNextAudioBlock(buffer);
+    }
    
-    ttsChannel.getNextAudioBlock(buffer);
+    //ttsChannel.getNextAudioBlock(buffer);
     /*
     
     // This is the place where you'd normally do the guts of your plugin's
@@ -175,10 +191,10 @@ void ConvergenceVstAudioProcessor::processBlock (AudioSampleBuffer& buffer, Midi
     // In case we have more outputs than inputs, we'll clear any output
     // channels that didn't contain input data, (because these aren't
     // guaranteed to be empty - they may contain garbage).
-    for (int i = getNumInputChannels(); i < getNumOutputChannels(); ++i)
+    /*for (int i = getNumInputChannels(); i < getNumOutputChannels(); ++i)
     {
         buffer.clear (i, 0, buffer.getNumSamples());
-    }
+    }*/
 }
 
 //==============================================================================

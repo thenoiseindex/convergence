@@ -151,7 +151,7 @@ void TTS::setVoice(int voiceToSet){
 
 void TTS::getNextAudioBlock ( AudioSampleBuffer &bufferToFill){
    
-    float* blockToFill =  bufferToFill.getWritePointer(0);
+    float* blockToFill =  bufferToFill.getWritePointer(outputChannel);
 
     if (bufferReady) {
         float* ttsChannelData = upsampledTTSBuffer.getWritePointer(0, samplesProcessed);
